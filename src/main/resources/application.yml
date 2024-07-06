@@ -1,1 +1,27 @@
-spring.application.name=gateway-01
+spring:
+  application:
+    name: gateway-01
+  cloud:
+    gateway:
+      mvc:
+        routes:
+          - id: service-01 # route id
+            uri: lb://service-01 # load balancing
+            predicates:
+              - Path=/service-01/** # routing rule
+          - id: service-02
+            uri: lb://service-02
+            predicates:
+              - Path=/service-02/**
+
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8000
+
