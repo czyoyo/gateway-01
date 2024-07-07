@@ -25,3 +25,9 @@ eureka:
 server:
   port: 8000
 
+token:
+  refresh-token-header: RefreshToken
+  roles: roles
+  secret: aG5nc2lodDM4N3locndzYW9ocmY4OWFyeWhnM3c5Z3Izd3E2eXI4dzN5aHJvOXczcg==
+  access-token-expiration: 10800000 # 3 hours
+  refresh-token-expiration: 300000 # 3 days
