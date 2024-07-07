@@ -27,6 +27,19 @@ spring:
             - RewritePath=/login, /user/login
             - RemoveRequestHeader=Cookie
 
+          # 회원 가입
+        - id: service-01
+          uri: lb://service-01
+          predicates:
+            - Path=/signup
+            - Method=POST
+          filters:
+            - RewritePath=/signup, /user/signup
+            - RemoveRequestHeader=Cookie
+
+          # 회원 정보 수정
+
+
 
         - id: service-02
           uri: lb://service-02
