@@ -23,6 +23,7 @@ public class AuthorizationHeaderFilter extends AbstractGatewayFilterFactory<Auth
     private final String configKey;
 
     public static class Config {
+        // 아직 설정 할 옵션이 없으므로 비워둠
     }
 
     //생성시 Config class를 상속받은 Factory로 넘겨줘야해서 lombok을 사용하지 않고 다음과 같이 처리
