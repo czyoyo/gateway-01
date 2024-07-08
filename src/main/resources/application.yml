@@ -29,6 +29,24 @@ spring:
           predicates:
             - Path=/service-02/**
 
+        # 1번과 2번 상호작용 테스트
+        - id: service-01
+          uri: lb://service-01
+          predicates:
+            - Path=/interaction
+            - Method=GET
+          filters:
+            - RewritePath=/interaction, /user/interaction
+
+      # 2번쪽 더미 데이터
+        - id: service-02
+          uri: lb://service-02
+          predicates:
+              - Path=/dummy
+              - Method=GET
+          filters:
+              - RewritePath=/dummy, /board/dummy
+
 
         # 로그인
         - id: service-01
