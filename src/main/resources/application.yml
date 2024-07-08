@@ -38,14 +38,14 @@ spring:
           filters:
             - RewritePath=/interaction, /user/interaction
 
-      # 2번쪽 더미 데이터
-        - id: service-02
-          uri: lb://service-02
-          predicates:
-              - Path=/dummy
-              - Method=GET
-          filters:
-              - RewritePath=/dummy, /board/dummy
+#      # 2번쪽 더미 데이터
+#        - id: service-02
+#          uri: lb://service-02
+#          predicates:
+#              - Path=/dummy
+#              - Method=GET
+#          filters:
+#              - RewritePath=/dummy, /board/dummy
 
 
         # 로그인
